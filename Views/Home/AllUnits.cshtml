@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Building>
+
+<h1>All Units</h1>
+
+<div class="row">
+    @foreach (Building b in Model)
+    {
+    <div class="col-3">
+        <h3>@b.BuildingName</h3>
+        @foreach (Unit u in b.Units)
+        {
+            <a href="@Url.Action("UnitDetails", "Home", new {unitId = u.UnitId })">
+                <li>@u.UnitName</li>
+            </a>
+        }
+    </div>
+    }
+</div>
+

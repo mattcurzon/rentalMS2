@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model DashboardViewModel
+
+<h1>Dashboard @DateTime.Today.ToString("dddd MMMM d, yyyy")</h1>
+<br />
+
+@*<div class="row">
+    <div class="col-1">
+
+    </div>
+    <div class="col-2">
+        <a class="btn btn-primary" href="@Url.Action("AddLateCheckOut", "Home")">Late CheckOut</a>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-primary" href="@Url.Action("AddEarlyCheckIn", "Home")">Early CheckIn</a>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-primary" href="@Url.Action("AddChore", "Home")">Add Chore</a>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-primary" href="@Url.Action("AddDeepClean", "Home")">Add Deep Clean</a>
+    </div>
+    <div class="col-2">
+        <a class="btn btn-primary" href="@Url.Action("AddMaitenanceTask", "Home")">Add Maitenance</a>
+    </div>
+    <div class="col-1">
+
+    </div>
+</div>*@
+
+<div class="row">
+    <div class="col-6 card-body">
+        <h2>Late CheckOuts</h2>
+        @foreach (Unit u in Model.UnitsLateCheckOut)
+        {
+            <p>@u.UnitName</p>
+        }
+        <a class="btn btn-primary" href="@Url.Action("AddLateCheckOut", "Home")">Add Late CheckOut</a>
+    </div>
+    <div class="col-6 card-body">
+        <h2>Early CheckIns</h2>
+        @foreach (Unit u in Model.UnitsEarlyCheckIn)
+        {
+            <p>@u.UnitName</p>
+        }
+    <a class="btn btn-primary" href="@Url.Action("AddEarlyCheckIn", "Home")">Add Early CheckIn</a>
+    </div>
+    <div class="col-6 card-body">
+        <h2>Pending Chores</h2>
+        @foreach (Chore c in Model.Chores)
+        {
+            <p>@c.ChoreName</p>
+        }
+    <a class="btn btn-primary" href="@Url.Action("AddChore", "Home")">Add Chore</a>
+    </div>
+    <div class="col-6 card-body">
+        <h2>Units Needing Deep Clean</h2>
+        @foreach (Unit u in Model.UnitsNeedingDeepClean)
+        {
+            <p>@u.UnitName</p>
+        }
+    <a class="btn btn-primary" href="@Url.Action("AddDeepClean", "Home")">Record Deep Clean</a>
+    </div>
+    </div>
+</div>
+
+
+
+
+

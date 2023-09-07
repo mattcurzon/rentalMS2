@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Chore>
+
+<h1>All Chores</h1>
+
+@foreach (Chore c in Model)
+    {
+    <div class="card-body">
+        <h2>@c.ChoreName</h2>
+        <p>Description: @c.ChoreDescription</p>
+        <p>Priority: @c.ChorePriority</p>
+        <p>Finish By: @c.FinishByDate</p>
+        <a class="btn btn-primary" href="@Url.Action("ChoreDetails", "Home", new {choreId = c.ChoreId})">Chore Details</a>
+    </div>
+
+    }

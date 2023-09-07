@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Unit
+
+<h1>@Model.UnitName</h1>
+
+<div class="row">
+    <div class="col-4">
+        <h3>Deep Clean History</h3>
+        @foreach (UnitDeepClean c in Model.UnitDeepCleans.OrderByDescending(c => c.DeepCleanDate))
+            {
+                <p>@c.DeepCleanDate.ToString("MM/dd/yy")</p>
+            }
+    </div>
+    <div class="col-4">
+        <h3>Maitenance Needed</h3>
+        <div class="card-body">
+            @foreach (MaitenanceTask t in Model.MaitenanceTasks)
+            {
+                <p>@t.Title</p>
+                <p>Maitenance Notes: @t.Notes</p>
+            }
+        </div>
+    </div>
+    <div class="col-4">
+        <h3>Chores</h3>
+        <div class="card-body">
+            @foreach (Chore c in Model.Chores)
+            {
+                <p>@c.ChoreName</p>
+                <p>Description: @c.ChoreDescription</p>
+            }
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,14 @@
+﻿s@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Unit>
+
+<h1>Units needing a deep clean this month</h1>
+
+@foreach (Unit u in Model)
+            {
+                <h3>@u.UnitName</h3>
+            }
+

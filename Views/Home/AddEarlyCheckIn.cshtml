@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EarlyCheckIn
+
+<h1>Add Early Checkin Request</h1>
+
+<form method="post">
+
+    <label asp-for="UnitId">Unit #</label>
+    <input type="number" name="unitId" asp-for="UnitId" required />
+
+    <label asp-for="CheckInDate">CheckIn Date: </label>
+    <input asp-for="CheckInDate" type="date"/>
+
+    <button type="submit">Save</button>
+</form>
